@@ -155,8 +155,12 @@ if test -d $cache_dir/ruby/.gem; then
   cp -r $cache_dir/ruby/.gem $build_dir
   HOME=$build_dir gem update compass --user-install --no-rdoc --no-ri
 else
+  status "Installing ruby gems"
   HOME=$build_dir gem install compass --user-install --no-rdoc --no-ri
 fi
+
+# copy the ruby interp into the build, why does it need this on production?
+cp -r /app/vendor/ruby-1.9.2 $build_dir/vendor
 
 # cache ruby gems compass
 rm -rf $cache_dir/ruby
