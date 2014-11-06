@@ -175,8 +175,13 @@ echo "export PATH=\"\$HOME/.gem/ruby/1.9.1/bin:\$PATH\"" > $build_dir/.profile.d
       export_env_dir $env_dir
     fi
 
+    # get the first grunt-cli path
+    status "getting grunt location"
+    node_modules_dir=$build_dir/node_modules
+    grunt_location=$(find "$node_modules_dir" -type d -name 'grunt-cli' | head -1);
+
     status "Running grunt heroku:$NODE_ENV task"
-    $build_dir/node_modules/.bin/grunt heroku:$NODE_ENV
+    $grunt_location/bin/grunt heroku:$NODE_ENV
   fi
 )
 
