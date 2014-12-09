@@ -38,7 +38,7 @@ Usage
 
 Create a new app with this buildpack:
 
-    heroku create myapp --buildpack heroku config:add BUILDPACK_URL=https://github.com/BlackAndRedInc/heroku-buildpack-nodejs-grunt-compass.git
+    heroku create myapp --buildpack BUILDPACK_URL=https://github.com/BlackAndRedInc/heroku-buildpack-nodejs-grunt-compass.git
 
 Or add this buildpack to your current app:
 
