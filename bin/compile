@@ -136,7 +136,7 @@ if [ ! -e $build_dir/Procfile ]; then
 fi
 
 # install compass
-outpu="$(ls -a $build_dir/.gem/ruby)"
+outpu="$(ls -a $build_dir/.gem)"
 echo "${outpu}"
 status "Installing Compass"
 export GEM_HOME=$build_dir/.gem/ruby/1.9.1
