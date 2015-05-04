@@ -165,7 +165,7 @@ fi
 
 status "Building runtime environment"
 
-op = "$(ls -a $build_dir/.gem)"
+op="$(ls -a $build_dir/.gem)"
 echo "${op}"
 
 mkdir -p $build_dir/.profile.d
