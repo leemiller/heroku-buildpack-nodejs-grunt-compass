@@ -136,8 +136,6 @@ if [ ! -e $build_dir/Procfile ]; then
 fi
 
 # install compass
-outpu="$(ls -a $build_dir)"
-echo "${outpu}"
 status "Installing Compass"
 export GEM_HOME=$build_dir/.gem/ruby/1.9.1
 PATH="$GEM_HOME/bin:$PATH"
@@ -150,7 +148,7 @@ else
   HOME=$build_dir gem install compass --user-install --no-rdoc --no-ri
 fi
 
-OUTPUT="$(ls -a /app/vendor/ruby-*)"
+OUTPUT="$(ls -a /app/vendor)"
 echo "${OUTPUT}"
 # copy the ruby interp into the build, why does it need this on production?
 cp -r /app/vendor/ruby-* $build_dir/vendor
