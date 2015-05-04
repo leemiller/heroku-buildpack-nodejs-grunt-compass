@@ -151,7 +151,7 @@ fi
 OUTPUT="$(ls -a /app/vendor/ruby-*)"
 echo "${OUTPUT}"
 # copy the ruby interp into the build, why does it need this on production?
-cp -r /app/vendor/ruby-1.9.2 $build_dir/vendor
+cp -r /app/vendor/ruby-* $build_dir/vendor
 
 # cache ruby gems compass
 rm -rf $cache_dir/ruby
