@@ -148,8 +148,8 @@ else
   HOME=$build_dir gem install compass --user-install --no-rdoc --no-ri
 fi
 
-vendorFiles = $(ls /app/vendor)
-status "$vendorFiles"
+OUTPUT="$(ls -a /app/vendor)"
+echo "${OUTPUT}"
 # copy the ruby interp into the build, why does it need this on production?
 cp -r /app/vendor/ruby-1.9.2 $build_dir/vendor
 
