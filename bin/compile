@@ -164,6 +164,10 @@ if test -d $build_dir/.gem; then
 fi
 
 status "Building runtime environment"
+
+op = "$(ls -a $build_dir/.gem)"
+echo "${op}"
+
 mkdir -p $build_dir/.profile.d
 echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $build_dir/.profile.d/nodejs.sh
 echo "export PATH=\"\$HOME/.gem/ruby/1.9.1/bin:\$PATH\"" > $build_dir/.profile.d/ruby.sh
